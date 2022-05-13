@@ -1,0 +1,35 @@
+<div class="container pt-5">
+  <div class="row justify-content-sm-center pt-5">
+      <div class="col-sm-6 shadow round pb-3">
+        <h1 >Sign In</h1>
+          <form [formGroup]="exform">
+              <div class="form-group">
+                <label class="col-form-label">FirstName:</label>
+                <input formControlName="firstname" type="text" class="form-control">
+                <small *ngIf="firstname.invalid && firstname.touched" class="text-danger">FirstName is Required</small> 
+              </div>
+              <div class="form-group">
+                <label class="col-form-label">LastName:</label>
+                <input formControlName="lastname" type="text" class="form-control">
+                <small *ngIf="lastname.invalid && lastname.touched" class="text-danger">LastName is Required</small> 
+              </div>
+              <div class="form-group">
+                <label class="col-form-label">Email:</label>
+                <input formControlName="email" type="text" class="form-control" >
+                <small *ngIf="email.invalid && email.touched" class="text-danger">Email is Required</small>
+              </div>
+              <div class="form-group">
+                <label class="col-form-label">Phone:</label>
+                <input formControlName="phone" type="text" class="form-control" >
+                <small *ngIf="phone.invalid && phone.touched" class="text-danger">Phone no is Required(minimum length 10,numbers are only allowed)</small>
+              </div>
+              <div class="form-group">
+                <label class="col-form-label">Address:</label>
+                <textarea formControlName="address" class="form-control" ></textarea>
+                <small *ngIf="address.invalid && address.touched" class="text-danger"> Address is Required(minimum length 10)</small> 
+              </div>
+              <button (click)="clicksub()" [disabled]="exform.invalid" type="button" class="btn btn-primary">Submit</button>
+            </form>
+      </div>
+  </div>
+</div>
